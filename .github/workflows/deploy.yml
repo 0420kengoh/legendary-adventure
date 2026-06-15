@@ -1,0 +1,44 @@
+name: Deploy to GitHub Pages
+
+# Builds nothing — this is a static site — just publishes the repo root.
+on:
+  push:
+    branches:
+      - claude/affectionate-planck-wcoygg
+  workflow_dispatch:
+
+# Allow the workflow to create a Pages deployment using the GITHUB_TOKEN.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One in-progress deployment at a time; let the latest push win.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure Pages
+        # enablement: true turns Pages on automatically (no manual Settings step).
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
