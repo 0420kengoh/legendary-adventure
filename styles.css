@@ -22,7 +22,7 @@
   --color-dark-surface: #211C16;
 
   /* Type scale */
-  --font-display: 'Archivo', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
   /* Spacing rhythm (8pt) */
@@ -180,19 +180,14 @@ h3 { font-size: 1.3rem; }
   min-height: 72px;
 }
 
-.brand { display: inline-flex; align-items: center; gap: 0.75rem; }
-.brand-mark {
-  display: grid;
-  place-items: center;
-  width: 42px;
-  height: 42px;
-  background: var(--color-foreground);
-  color: #fff;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 0.95rem;
-  letter-spacing: 0.02em;
-  border-radius: var(--radius);
+.brand { display: inline-flex; align-items: center; gap: 0.75rem; color: var(--color-foreground); }
+.brand-logo {
+  display: block;
+  height: 30px;
+  width: 133px;
+  background-color: currentColor;
+  -webkit-mask: url("reno-lockup.svg") no-repeat center / contain;
+  mask: url("reno-lockup.svg") no-repeat center / contain;
 }
 .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
 .brand-name { font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; }
@@ -474,6 +469,7 @@ h3 { font-size: 1.3rem; }
 /* ----- Footer ----- */
 .site-footer { background: var(--color-dark); color: #C7BEB7; padding-top: var(--space-8); }
 .site-footer .brand-name { color: #fff; }
+.site-footer .brand-logo { color: #fff; }
 .footer-inner {
   display: grid;
   grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
