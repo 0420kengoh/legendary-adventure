@@ -1,29 +1,29 @@
 /* ===========================================================
-   RENO Works — by Signature Malaysia
-   Style: Minimalism & Swiss Style
-   Palette: warm stone grey + gold accent (from design system)
-   Type:   Cinzel (display) / Josefin Sans (body)
+   Signature Reno Works — by Signature Group
+   Style: Clean corporate (company-profile identity)
+   Palette: charcoal + antique brass gold on white/cream
+   Type:   Archivo (display) / Inter (body)
    =========================================================== */
 
 :root {
-  /* Color tokens */
-  --color-primary: #78716C;
+  /* Signature Reno Works — corporate identity tokens */
+  --color-primary: #1A1714;
   --color-on-primary: #FFFFFF;
-  --color-secondary: #A8A29E;
-  --color-accent: #D97706;
-  --color-accent-strong: #B45309;
-  --color-background: #FAF5F2;
+  --color-secondary: #8C8579;
+  --color-accent: #A78B24;
+  --color-accent-strong: #8A7020;
+  --color-background: #FFFFFF;
   --color-surface: #FFFFFF;
-  --color-foreground: #0F172A;
-  --color-muted: #F2EEEB;
-  --color-muted-foreground: #6B6560;
-  --color-border: #E7E1DC;
-  --color-dark: #1C1917;
-  --color-dark-surface: #292524;
+  --color-foreground: #1A1714;
+  --color-muted: #F7F4EE;
+  --color-muted-foreground: #6B6357;
+  --color-border: #E6E0D6;
+  --color-dark: #16130F;
+  --color-dark-surface: #211C16;
 
   /* Type scale */
-  --font-display: 'Cinzel', Georgia, 'Times New Roman', serif;
-  --font-body: 'Josefin Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Archivo', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
   /* Spacing rhythm (8pt) */
   --space-1: 0.5rem;
@@ -66,9 +66,9 @@ ul { list-style: none; padding: 0; }
 
 h1, h2, h3, h4 {
   font-family: var(--font-display);
-  font-weight: 600;
-  line-height: 1.15;
-  letter-spacing: 0.01em;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
   color: var(--color-foreground);
 }
 
@@ -168,7 +168,7 @@ h3 { font-size: 1.3rem; }
   position: sticky;
   top: 0;
   z-index: var(--z-header);
-  background: rgba(250, 245, 242, 0.85);
+  background: rgba(255, 255, 255, 0.82);
   backdrop-filter: saturate(180%) blur(12px);
   border-bottom: 1px solid var(--color-border);
 }
@@ -290,7 +290,7 @@ h3 { font-size: 1.3rem; }
 
 /* Decorative gradient "photos" so the page is fully self-contained */
 .photo-1 { background: linear-gradient(135deg, #44403C 0%, #78716C 55%, #A8A29E 100%); }
-.photo-2 { background: linear-gradient(135deg, #D97706 0%, #B45309 100%); }
+.photo-2 { background: linear-gradient(135deg, #C9A93C 0%, #8A7020 100%); }
 
 /* ----- Trust strip ----- */
 .trust { background: var(--color-dark); color: #E7E1DC; }
@@ -311,12 +311,13 @@ h3 { font-size: 1.3rem; }
 .card {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  border-left: 3px solid var(--color-accent);
+  border-radius: var(--radius);
   padding: var(--space-3);
   box-shadow: var(--shadow-sm);
   transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), border-color 0.25s var(--ease);
 }
-.service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--color-secondary); }
+.service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--color-accent); }
 .service-icon {
   display: grid; place-items: center;
   width: 52px; height: 52px;
@@ -361,10 +362,10 @@ h3 { font-size: 1.3rem; }
 
 .portfolio-item.pf-1 { background: linear-gradient(135deg, #57534E, #292524); grid-row: span 2; }
 .portfolio-item.pf-2 { background: linear-gradient(135deg, #A8A29E, #57534E); }
-.portfolio-item.pf-3 { background: linear-gradient(135deg, #D97706, #92400E); }
+.portfolio-item.pf-3 { background: linear-gradient(135deg, #C9A93C, #6B5618); }
 .portfolio-item.pf-4 { background: linear-gradient(135deg, #78716C, #44403C); grid-row: span 2; }
 .portfolio-item.pf-5 { background: linear-gradient(135deg, #44403C, #1C1917); }
-.portfolio-item.pf-6 { background: linear-gradient(135deg, #B45309, #78350F); }
+.portfolio-item.pf-6 { background: linear-gradient(135deg, #A78B24, #5C4A14); }
 
 /* ----- Why choose us ----- */
 .why-inner { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
@@ -386,7 +387,7 @@ h3 { font-size: 1.3rem; }
 /* ----- Process (dark) ----- */
 .section-dark { background: var(--color-dark); color: #E7E1DC; }
 .section-dark h2, .section-dark h3 { color: #fff; }
-.process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-3); counter-reset: step; }
+.process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); counter-reset: step; }
 .process-grid li {
   padding: var(--space-3);
   border: 1px solid rgba(231, 225, 220, 0.14);

@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>RENO Works — Immersive Renovation Experience · Signature Malaysia</title>
-  <meta name="description" content="An immersive 3D experience for RENO Works, the premium renovation division of Signature Malaysia. WebGL, motion and craftsmanship." />
+  <title>Signature Reno Works — Complete Renovation. Execute with Precision.</title>
+  <meta name="description" content="Signature Reno Works (SRW) is the renovation execution arm of Signature Group — Malaysia's first trusted renovator brand. G7 CIDB registered, fixed transparent pricing, 24-month quality assurance." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="immersive.css" />
-  <!-- 3D + motion libraries, vendored locally -->
   <script type="importmap">
     { "imports": { "three": "./libs/three.module.min.js" } }
   </script>
@@ -22,7 +21,7 @@
   <!-- ===== Preloader ===== -->
   <div class="preloader" id="preloader" aria-hidden="true">
     <div class="preloader-inner">
-      <span class="preloader-brand">RENO Works</span>
+      <span class="preloader-brand">Signature Reno Works</span>
       <span class="preloader-count" id="preloader-count">0</span>
       <span class="preloader-bar"><span class="preloader-bar-fill" id="preloader-fill"></span></span>
     </div>
@@ -32,40 +31,42 @@
   <div class="cursor" id="cursor" aria-hidden="true"></div>
   <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
 
-  <!-- ===== WebGL canvas (fixed background) ===== -->
+  <!-- ===== WebGL canvas ===== -->
   <canvas class="webgl" id="webgl" aria-hidden="true"></canvas>
 
   <!-- ===== Header ===== -->
   <header class="site-header" id="top">
-    <a class="brand" href="#top" data-magnetic aria-label="RENO Works home">
-      <span class="brand-mark">RW</span>
+    <a class="brand" href="#top" data-magnetic aria-label="Signature Reno Works home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 3 4 21h3.4L12.4 3z"/><path d="M16.6 3 11.6 21H15L20 3z"/></svg>
+      </span>
       <span class="brand-text">
-        <span class="brand-name">RENO Works</span>
-        <span class="brand-sub">Signature Malaysia</span>
+        <span class="brand-name">SIGNATURE</span>
+        <span class="brand-sub">Reno Works</span>
       </span>
     </a>
     <nav class="nav" aria-label="Primary">
-      <a href="#work" data-cursor="hover">Work</a>
-      <a href="#services" data-cursor="hover">Services</a>
-      <a href="#process" data-cursor="hover">Process</a>
+      <a href="#solution" data-cursor="hover">Solution</a>
+      <a href="#why" data-cursor="hover">Why SRW</a>
+      <a href="#process" data-cursor="hover">How We Work</a>
       <a href="#contact" data-cursor="hover">Contact</a>
     </nav>
-    <a class="btn btn-accent" href="#contact" data-magnetic data-cursor="hover">Start a Project</a>
+    <a class="btn btn-accent" href="#contact" data-magnetic data-cursor="hover">Get a Fast Quote</a>
   </header>
 
   <main id="main">
     <!-- ===== Hero ===== -->
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-content">
-        <p class="hero-eyebrow reveal-up">Signature Malaysia · Renovation</p>
+        <p class="hero-eyebrow reveal-up">Signature Reno Works · A Signature Group company</p>
         <h1 id="hero-title" class="hero-title">
-          <span class="line"><span>Spaces</span></span>
-          <span class="line"><span>worth <em>living</em> in.</span></span>
+          <span class="line"><span>Complete renovation.</span></span>
+          <span class="line"><span>Execute with <em>precision.</em></span></span>
         </h1>
-        <p class="hero-sub reveal-up">We design and build premium renovations across Malaysia — engineered in 3D, finished by hand, delivered on a signature standard.</p>
+        <p class="hero-sub reveal-up">The renovation execution arm of Signature Group. After three decades building premium kitchens, wardrobes and interiors for Malaysian homes, we bring the same discipline and standards to renovation — on time, on budget, built to last.</p>
         <div class="hero-actions reveal-up">
-          <a class="btn btn-accent btn-lg" href="#contact" data-magnetic data-cursor="hover">Get a Free Quote</a>
-          <a class="btn btn-line btn-lg" href="#work" data-cursor="hover">Explore Work</a>
+          <a class="btn btn-accent btn-lg" href="#contact" data-magnetic data-cursor="hover">Get a Fast Quote</a>
+          <a class="btn btn-line btn-lg" href="#process" data-cursor="hover">How We Work</a>
         </div>
       </div>
       <div class="hero-scroll" aria-hidden="true">
@@ -73,139 +74,182 @@
         <span class="hero-scroll-line"></span>
       </div>
       <div class="hero-meta" aria-hidden="true">
-        <span>Est. 2014</span>
-        <span>Kuala Lumpur · Selangor</span>
+        <span>G7 CIDB Registered</span>
+        <span>Kuala Lumpur, Malaysia</span>
       </div>
     </section>
 
-    <!-- ===== Manifesto (kinetic scrub text) ===== -->
-    <section class="manifesto" aria-label="Our philosophy">
+    <!-- ===== Manifesto ===== -->
+    <section class="manifesto" aria-label="Our vision">
       <p class="manifesto-text" id="manifesto">
-        We don't just renovate rooms — we engineer how a space feels to walk into,
-        how light lands at 6pm, how a kitchen holds a family. Precision, honesty, craft.
+        Malaysia's first trusted renovator brand — bringing the trust, transparency and standards homeowners already expect from Signature to renovation.
       </p>
     </section>
 
-    <!-- ===== Horizontal pinned services ===== -->
-    <section class="h-section" id="services" aria-labelledby="services-title">
+    <!-- ===== One-stop total solution (horizontal pinned) ===== -->
+    <section class="h-section" id="solution" aria-labelledby="solution-title">
       <div class="h-pin">
         <div class="h-track" id="h-track">
           <div class="h-intro h-panel">
-            <p class="eyebrow">What We Do</p>
-            <h2 id="services-title">Four<br>disciplines,<br>one team.</h2>
-            <p class="h-intro-sub">Scroll sideways →</p>
+            <p class="eyebrow">One-Stop Total Solution</p>
+            <h2 id="solution-title">Your whole<br>home — one<br>trusted brand.</h2>
+            <p class="h-intro-sub">No juggling contractors &nbsp;→</p>
           </div>
 
           <article class="h-panel s-card" data-tilt data-cursor="view">
             <span class="s-num">01</span>
-            <h3>Residential</h3>
-            <p>Full home makeovers, extensions and reconfigurations built around how your family actually lives.</p>
-            <span class="s-tag">Homes · Condos · Landed</span>
+            <h3>Renovation</h3>
+            <p>Wet works, M&amp;E, tiling, ceiling and finishing. We build and execute your space.</p>
+            <span class="s-tag">Build &amp; Execute</span>
           </article>
 
           <article class="h-panel s-card" data-tilt data-cursor="view">
             <span class="s-num">02</span>
-            <h3>Commercial</h3>
-            <p>Offices, retail and F&amp;B fit-outs delivered on schedule, protecting your brand and your opening date.</p>
-            <span class="s-tag">Office · Retail · F&amp;B</span>
+            <h3>Built-In Cabinets</h3>
+            <p>Kitchens, wardrobes, TV &amp; feature walls — custom carpentry, made to fit.</p>
+            <span class="s-tag">Signature Craft</span>
           </article>
 
           <article class="h-panel s-card" data-tilt data-cursor="view">
             <span class="s-num">03</span>
-            <h3>Interior Design</h3>
-            <p>3D visualisation, material curation and lighting design — approve the look before a wall moves.</p>
-            <span class="s-tag">3D · Materials · Lighting</span>
+            <h3>Home Collective</h3>
+            <p>Curtains, flooring, sanitary and smart home — every living essential, sourced.</p>
+            <span class="s-tag">Living Essentials</span>
           </article>
 
           <article class="h-panel s-card" data-tilt data-cursor="view">
             <span class="s-num">04</span>
-            <h3>Kitchen &amp; Bath</h3>
-            <p>Precision cabinetry, waterproofing and tiling for the rooms that decide a renovation's quality.</p>
-            <span class="s-tag">Cabinetry · Tiling</span>
+            <h3>Furniture</h3>
+            <p>Sofas, dining, bedding and loose furniture — styled and move-in ready.</p>
+            <span class="s-tag">Move-In Ready</span>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ===== Stats ===== -->
-    <section class="stats" aria-label="By the numbers">
+    <!-- ===== The SRW Promise (stats) ===== -->
+    <section class="stats" aria-label="The SRW promise">
       <div class="stat reveal-up">
-        <span class="stat-num" data-count="12" data-suffix="+">0</span>
-        <span class="stat-label">Years of craftsmanship</span>
+        <span class="stat-num" data-count="100" data-suffix="%">0</span>
+        <span class="stat-label">On-time delivery, in writing</span>
       </div>
       <div class="stat reveal-up">
-        <span class="stat-num" data-count="450" data-suffix="+">0</span>
-        <span class="stat-label">Projects delivered</span>
+        <span class="stat-num" data-count="24" data-suffix="">0</span>
+        <span class="stat-label">Month quality assurance</span>
       </div>
       <div class="stat reveal-up">
-        <span class="stat-num" data-count="98" data-suffix="%">0</span>
-        <span class="stat-label">On-time handovers</span>
+        <span class="stat-num" data-count="14" data-suffix="">0</span>
+        <span class="stat-label">Step Signature Standard</span>
       </div>
       <div class="stat reveal-up">
-        <span class="stat-num" data-count="10" data-suffix="yr">0</span>
-        <span class="stat-label">Workmanship warranty</span>
+        <span class="stat-num" data-count="0" data-suffix="">0</span>
+        <span class="stat-label">Hidden costs — Fast Quote pricing</span>
       </div>
     </section>
 
-    <!-- ===== Work / portfolio parallax ===== -->
+    <!-- ===== Why choose SRW ===== -->
+    <section class="reasons" id="why" aria-labelledby="why-title">
+      <header class="reasons-head reveal-up">
+        <p class="eyebrow">Why Choose SRW</p>
+        <h2 id="why-title">Renovation, without the guesswork.</h2>
+        <p class="reasons-sub">Renovation is stressful when you hire the wrong people. Here's how SRW removes the risk.</p>
+      </header>
+      <div class="reasons-grid">
+        <article class="reason reveal-up" data-tilt>
+          <span class="reason-no">01</span>
+          <h3>Backed by Signature</h3>
+          <p>Not a faceless contractor — a subsidiary of a 30-year home brand you can hold accountable.</p>
+        </article>
+        <article class="reason reveal-up" data-tilt>
+          <span class="reason-no">02</span>
+          <h3>G7 CIDB Registered</h3>
+          <p>The highest contractor grade in Malaysia — proof of capability, capacity and compliance.</p>
+        </article>
+        <article class="reason reveal-up" data-tilt>
+          <span class="reason-no">03</span>
+          <h3>Fixed, Transparent Pricing</h3>
+          <p>Detailed quotes up front. No hidden costs, no mid-project surprises — the #1 renovation fear, solved.</p>
+        </article>
+        <article class="reason reveal-up" data-tilt>
+          <span class="reason-no">04</span>
+          <h3>Dedicated Supervision</h3>
+          <p>A named project supervisor coordinates daily and reports to you every week.</p>
+        </article>
+        <article class="reason reveal-up" data-tilt>
+          <span class="reason-no">05</span>
+          <h3>On-Time, Guaranteed</h3>
+          <p>A locked schedule with weekly gate reviews — you always know exactly where your project stands.</p>
+        </article>
+        <article class="reason reveal-up" data-tilt>
+          <span class="reason-no">06</span>
+          <h3>24-Month Assurance</h3>
+          <p>We don't disappear at handover. Formal quality assurance with a documented closeout.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== Portfolio ===== -->
     <section class="work" id="work" aria-labelledby="work-title">
       <header class="work-head">
-        <p class="eyebrow">Selected Work</p>
-        <h2 id="work-title">Spaces with a signature</h2>
+        <p class="eyebrow">Portfolio</p>
+        <h2 id="work-title">Crafted spaces, beautifully finished</h2>
       </header>
       <div class="work-grid">
         <figure class="work-item wk-1" data-cursor="view" data-speed="0.92">
           <div class="work-media"></div>
-          <figcaption><span>Residential</span><strong>Bangsar Semi-D Revamp</strong></figcaption>
+          <figcaption><span>Residential</span><strong>Condo Full Renovation</strong></figcaption>
         </figure>
         <figure class="work-item wk-2" data-cursor="view" data-speed="1.08">
           <div class="work-media"></div>
-          <figcaption><span>Commercial</span><strong>Mont Kiara Office</strong></figcaption>
+          <figcaption><span>Kitchen</span><strong>Built-In Kitchen &amp; Island</strong></figcaption>
         </figure>
         <figure class="work-item wk-3" data-cursor="view" data-speed="0.96">
           <div class="work-media"></div>
-          <figcaption><span>Kitchen</span><strong>Damansara Wet &amp; Dry</strong></figcaption>
+          <figcaption><span>Living</span><strong>TV &amp; Feature Wall</strong></figcaption>
         </figure>
         <figure class="work-item wk-4" data-cursor="view" data-speed="1.12">
           <div class="work-media"></div>
-          <figcaption><span>Retail</span><strong>Pavilion Boutique</strong></figcaption>
+          <figcaption><span>Wardrobe</span><strong>Master Walk-In</strong></figcaption>
         </figure>
       </div>
     </section>
 
-    <!-- ===== Process timeline ===== -->
+    <!-- ===== The renovation journey (process) ===== -->
     <section class="process" id="process" aria-labelledby="process-title">
       <header class="process-head reveal-up">
-        <p class="eyebrow">How It Works</p>
-        <h2 id="process-title">From first sketch to final handover</h2>
+        <p class="eyebrow">The Renovation Journey</p>
+        <h2 id="process-title">Six stages. Fourteen steps. One standard.</h2>
+        <p class="process-sub">Every step is a standard — not an extra. This is how SRW works on every project, from confirmation to closeout.</p>
       </header>
       <ol class="timeline">
-        <li class="tl-item reveal-up"><span class="tl-no">01</span><div><h3>Consult</h3><p>We listen to your goals, budget and timeline — on site or virtually.</p></div></li>
-        <li class="tl-item reveal-up"><span class="tl-no">02</span><div><h3>Design &amp; Quote</h3><p>3D concepts and a transparent, fixed-price proposal for your approval.</p></div></li>
-        <li class="tl-item reveal-up"><span class="tl-no">03</span><div><h3>Build</h3><p>Our in-house craftsmen execute, with weekly progress reporting.</p></div></li>
-        <li class="tl-item reveal-up"><span class="tl-no">04</span><div><h3>Handover</h3><p>Final inspection, snag-free finishing and your 10-year warranty.</p></div></li>
+        <li class="tl-item reveal-up"><span class="tl-no">01</span><div><h3>Pre-Entry</h3><p>Site kickoff &amp; client sign-off. Every measurement is signed before work starts.</p></div></li>
+        <li class="tl-item reveal-up"><span class="tl-no">02</span><div><h3>Entry</h3><p>Property protection &amp; sealing — floor, doors and fixtures wrapped before any trade enters.</p></div></li>
+        <li class="tl-item reveal-up"><span class="tl-no">03</span><div><h3>Progressing</h3><p>Laser-set setting-out, daily supervision and a weekly gate review every Friday.</p></div></li>
+        <li class="tl-item reveal-up"><span class="tl-no">04</span><div><h3>Pre-Exit QC</h3><p>Internal QC sweep and a function test on every point — we find our own defects before you do.</p></div></li>
+        <li class="tl-item reveal-up"><span class="tl-no">05</span><div><h3>Handover</h3><p>A room-by-room walkthrough and a premium handover pack — warranties, codes, photos and guides.</p></div></li>
+        <li class="tl-item reveal-up"><span class="tl-no">06</span><div><h3>Assurance</h3><p>24-month quality assurance with a formal closeout inspection — documented sign-off, on paper.</p></div></li>
       </ol>
     </section>
 
-    <!-- ===== Marquee ===== -->
+    <!-- ===== Marquee (trades) ===== -->
     <section class="marquee" aria-hidden="true">
       <div class="marquee-track">
-        <span>Residential</span><span class="m-dot">•</span><span>Commercial</span><span class="m-dot">•</span><span>Interior Design</span><span class="m-dot">•</span><span>Kitchen &amp; Bath</span><span class="m-dot">•</span>
-        <span>Residential</span><span class="m-dot">•</span><span>Commercial</span><span class="m-dot">•</span><span>Interior Design</span><span class="m-dot">•</span><span>Kitchen &amp; Bath</span><span class="m-dot">•</span>
+        <span>Wet Works</span><span class="m-dot">•</span><span>M&amp;E</span><span class="m-dot">•</span><span>Tiling</span><span class="m-dot">•</span><span>Waterproofing</span><span class="m-dot">•</span><span>Painting</span><span class="m-dot">•</span><span>Ceiling &amp; Partition</span><span class="m-dot">•</span><span>Metal &amp; Aluminium</span><span class="m-dot">•</span><span>Site Management</span><span class="m-dot">•</span>
+        <span>Wet Works</span><span class="m-dot">•</span><span>M&amp;E</span><span class="m-dot">•</span><span>Tiling</span><span class="m-dot">•</span><span>Waterproofing</span><span class="m-dot">•</span><span>Painting</span><span class="m-dot">•</span><span>Ceiling &amp; Partition</span><span class="m-dot">•</span><span>Metal &amp; Aluminium</span><span class="m-dot">•</span><span>Site Management</span><span class="m-dot">•</span>
       </div>
     </section>
 
     <!-- ===== CTA ===== -->
     <section class="cta" id="contact" aria-labelledby="cta-title">
       <div class="cta-inner">
-        <p class="eyebrow reveal-up">Get Started</p>
-        <h2 id="cta-title" class="cta-title reveal-up">Let's build something<br><em>worth living in.</em></h2>
-        <p class="cta-sub reveal-up">Tell us about your space and we'll respond within one business day. Free, no-obligation quote.</p>
-        <a class="btn btn-accent btn-xl" href="mailto:hello@renoworks.my" data-magnetic data-cursor="hover">Request a Quote</a>
+        <p class="eyebrow reveal-up">Ready to start your project?</p>
+        <h2 id="cta-title" class="cta-title reveal-up">Let's build something<br><em>that lasts.</em></h2>
+        <p class="cta-sub reveal-up">One brand. One point of contact. From bare unit to move-in ready — get a fast, transparent quote with no hidden costs.</p>
+        <a class="btn btn-accent btn-xl" href="mailto:info@signature.my" data-magnetic data-cursor="hover">Get a Fast Quote</a>
         <div class="cta-contacts reveal-up">
-          <a href="tel:+60312345678" data-cursor="hover">+60 3-1234 5678</a>
+          <a href="tel:+60362867000" data-cursor="hover">+603-6286 7000</a>
           <span>·</span>
-          <a href="mailto:hello@renoworks.my" data-cursor="hover">hello@renoworks.my</a>
+          <a href="mailto:info@signature.my" data-cursor="hover">info@signature.my</a>
         </div>
       </div>
     </section>
@@ -213,14 +257,16 @@
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <span class="brand-name">RENO Works</span>
-      <p>A Signature Malaysia company · Petaling Jaya, Selangor</p>
+      <span class="brand-name">Signature Reno Works Sdn Bhd</span>
+      <p>By Signature Group · Menara Chin Hin, Level 21, No. 1 Jalan Naga Emas, Sri Petaling, 57000 Kuala Lumpur</p>
       <p class="footer-links">
         <a href="classic.html" data-cursor="hover">View classic site</a>
         <span>·</span>
+        <a href="tel:+60362867000" data-cursor="hover">+603-6286 7000</a>
+        <span>·</span>
         <a href="#top" data-cursor="hover">Back to top ↑</a>
       </p>
-      <p class="footer-copy">&copy; <span id="year">2026</span> RENO Works. CIDB Registered · Licensed &amp; Insured.</p>
+      <p class="footer-copy">&copy; <span id="year">2026</span> Signature Reno Works Sdn Bhd. G7 CIDB Registered · Distinctive Deliver. Design Dedicatedly.</p>
     </div>
   </footer>
 

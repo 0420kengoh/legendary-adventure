@@ -4,16 +4,17 @@
    =========================================================== */
 
 :root {
-  --bg: #0E0C0B;
-  --bg-soft: #16120F;
-  --surface: #1C1815;
-  --text: #F6F1EB;
-  --muted: #A39A90;
-  --accent: #F59E0B;
-  --accent-deep: #D97706;
-  --line: rgba(246, 241, 235, 0.12);
-  --font-display: 'Cinzel', Georgia, serif;
-  --font-body: 'Josefin Sans', system-ui, sans-serif;
+  /* Signature Reno Works — corporate identity: charcoal + antique brass gold */
+  --bg: #14110D;
+  --bg-soft: #1B1712;
+  --surface: #201B15;
+  --text: #F4EFE6;
+  --muted: #A8A091;
+  --accent: #C9A93C;        /* brass gold, legible on dark */
+  --accent-deep: #A78B24;   /* SRW brand gold */
+  --line: rgba(244, 239, 230, 0.12);
+  --font-display: 'Archivo', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
   --container: 1280px;
 }
@@ -37,12 +38,12 @@ canvas { display: block; }
 
 h1, h2, h3 {
   font-family: var(--font-display);
-  font-weight: 700;
-  line-height: 1.05;
-  letter-spacing: 0.005em;
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -0.02em;
 }
 
-em { font-style: italic; color: var(--accent); }
+em { font-style: italic; font-weight: 600; color: var(--accent); }
 ::selection { background: var(--accent); color: #1a1410; }
 
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
@@ -105,6 +106,8 @@ body.using-touch .cursor, body.using-touch .cursor-dot { display: none; }
   border: 1.5px solid var(--accent); color: var(--accent);
   font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; border-radius: 2px;
 }
+.brand-mark svg { width: 20px; height: 20px; }
+.brand-name { letter-spacing: 0.12em; }
 .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
 .brand-name { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
 .brand-sub { font-size: 0.66rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
@@ -195,6 +198,24 @@ section { position: relative; }
 .stat-num { font-family: var(--font-display); font-weight: 800; font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1; color: var(--text); }
 .stat-label { font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
 
+/* ----- Why SRW (reasons) ----- */
+.reasons { padding: clamp(4rem, 10vh, 8rem) clamp(1.25rem, 6vw, 6rem); }
+.reasons-head { max-width: 640px; margin-bottom: clamp(2.5rem, 6vw, 4rem); }
+.reasons-head h2 { font-size: clamp(2rem, 5vw, 3.6rem); margin: 0.75rem 0; }
+.reasons-sub { color: var(--muted); font-size: 1.08rem; }
+.reasons-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1rem, 2.5vw, 1.75rem); }
+.reason {
+  background: var(--surface); border: 1px solid var(--line);
+  border-left: 3px solid var(--accent-deep); border-radius: 4px;
+  padding: clamp(1.5rem, 2.5vw, 2rem);
+  transition: border-color 0.35s var(--ease), background-color 0.35s var(--ease), transform 0.35s var(--ease);
+  will-change: transform;
+}
+.reason:hover { border-color: var(--accent); border-left-color: var(--accent); background: #261f17; }
+.reason-no { font-family: var(--font-display); font-weight: 800; font-size: 1.1rem; color: var(--accent); letter-spacing: 0.05em; }
+.reason h3 { font-size: 1.35rem; margin: 0.75rem 0 0.6rem; }
+.reason p { color: var(--muted); font-size: 0.98rem; }
+
 /* ----- Work ----- */
 .work { padding: 0 clamp(1.25rem, 6vw, 6rem) clamp(4rem, 10vh, 8rem); }
 .work-head { margin-bottom: clamp(2rem, 5vw, 4rem); }
@@ -216,6 +237,7 @@ section { position: relative; }
 .process { padding: clamp(4rem, 10vh, 8rem) clamp(1.25rem, 6vw, 6rem); }
 .process-head { margin-bottom: clamp(2.5rem, 6vw, 5rem); }
 .process-head h2 { font-size: clamp(2rem, 5vw, 3.6rem); margin-top: 0.75rem; max-width: 18ch; }
+.process-sub { color: var(--muted); font-size: 1.05rem; margin-top: 1rem; max-width: 52ch; }
 .timeline { display: grid; gap: 0; }
 .tl-item { display: grid; grid-template-columns: 120px 1fr; gap: clamp(1rem, 4vw, 3rem); padding: clamp(1.5rem, 4vw, 2.5rem) 0; border-top: 1px solid var(--line); align-items: baseline; }
 .tl-item:last-child { border-bottom: 1px solid var(--line); }
@@ -258,6 +280,7 @@ section { position: relative; }
 @media (max-width: 900px) {
   .nav { display: none; }
   .stats { grid-template-columns: 1fr 1fr; }
+  .reasons-grid { grid-template-columns: 1fr 1fr; }
   .work-grid { grid-template-columns: 1fr; }
   .tl-item { grid-template-columns: 70px 1fr; }
 }
@@ -266,6 +289,7 @@ section { position: relative; }
   .brand-text { display: none; }
   .hero-meta { display: none; }
   .stats { grid-template-columns: 1fr; }
+  .reasons-grid { grid-template-columns: 1fr; }
   .s-card { width: 80vw; height: 56vh; }
 }
 

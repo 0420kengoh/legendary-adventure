@@ -1,52 +1,64 @@
-# RENO Works — by Signature Malaysia
+# Signature Reno Works (SRW)
 
-A professional renovation company landing page. RENO Works is the renovation
-division under **Signature Malaysia**, offering residential renovation,
-commercial fit-out, interior design, and kitchen & bathroom remodelling.
+Marketing site for **Signature Reno Works Sdn Bhd** — the renovation execution
+arm of **Signature Group**, positioned as *Malaysia's first trusted renovator
+brand*. Content is drawn from the official SRW company profile and media-launch
+Q&A.
 
-## Stack
+Two front doors, one brand:
 
-Plain, dependency-free static site — just open it in a browser.
+- **`index.html`** — the immersive flagship: a WebGL hero (Three.js), smooth
+  scroll-driven motion (GSAP ScrollTrigger), pinned horizontal sections, custom
+  cursor and 3D tilt. Dark, cinematic — matching the company-profile cover.
+- **`classic.html`** — a clean corporate landing page matching the company
+  profile's light pages (white/charcoal with brass-gold accents).
 
-- `index.html` — page markup (hero, services, portfolio, why-us, process, testimonials, quote form, footer)
-- `styles.css` — design system + responsive layout
-- `main.js` — mobile nav, scroll-reveal animations, quote-form validation
+## Corporate identity
 
-## Design system
-
-Generated with the UI/UX Pro Max skill for the renovation/interior industry:
+Extracted from the SRW company profile:
 
 | Token | Value |
 | --- | --- |
-| Style | Minimalism & Swiss Style |
-| Primary | `#78716C` (warm stone grey) |
-| Accent / CTA | `#D97706` (gold) |
-| Background | `#FAF5F2` (warm off-white) |
-| Foreground | `#0F172A` |
-| Display font | Cinzel |
-| Body font | Josefin Sans |
+| Accent (antique brass gold) | `#A78B24` |
+| Charcoal | `#16130F` / `#1A1714` |
+| Cream surface | `#F7F4EE` |
+| Display font | Archivo |
+| Body font | Inter |
+| Taglines | *Complete renovation. Execute with precision.* · *Distinctive Deliver. Design Dedicatedly.* |
 
-## Run it
+## Content sources
 
-No build step. Either open the file directly:
+- `SRW_Company_Profile.pdf` — one-stop solution, vision, why-choose-us, the
+  8 renovation trades, the 6-stage / 14-step Signature Standard, R.I.S.E. site
+  standard, the SRW Promise, and contact details.
+- `Questions_on_SRW_Reply.docx` — brand voice and positioning (market
+  opportunity, consumer pain points, differentiation).
 
-```bash
-open index.html      # macOS
-```
+## Files
 
-…or serve it locally:
+- `index.html`, `immersive.css`, `immersive.js` — immersive flagship
+- `classic.html`, `styles.css`, `main.js` — clean corporate page
+- `libs/` — vendored Three.js + GSAP (no runtime CDN needed)
+- `.github/workflows/deploy.yml` — auto-deploys to GitHub Pages on push
+
+## Run locally
 
 ```bash
 python3 -m http.server 8000
-# then visit http://localhost:8000
+# http://localhost:8000          → immersive
+# http://localhost:8000/classic.html → classic
 ```
+
+## Live
+
+Deployed via GitHub Pages: <https://0420kengoh.github.io/legendary-adventure/>
 
 ## Notes
 
-- All imagery uses CSS gradients so the site is fully self-contained (no external
-  image assets). Swap the `.photo-*` / `.pf-*` backgrounds in `styles.css` for
-  real project photos when available.
-- Contact details (phone, email, address) are placeholders — update them in
-  `index.html`.
-- The quote form validates client-side and shows a success message; wire it to a
-  real backend/email service to receive submissions.
+- Imagery uses CSS gradients so the site is fully self-contained. Swap the
+  `.photo-*` / `.pf-*` / `.work-media` backgrounds for real SRW project photos
+  when available.
+- Contact details (phone, email, office address) are taken from the company
+  profile.
+- The quote form validates client-side; wire it to a backend/CRM to receive
+  submissions.

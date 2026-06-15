@@ -34,7 +34,7 @@ function initWebGL() {
   const key = new THREE.DirectionalLight(0xfff2e0, 2.2);
   key.position.set(6, 12, 8);
   scene.add(key);
-  const gold = new THREE.PointLight(0xf59e0b, 60, 40);
+  const gold = new THREE.PointLight(0xc9a93c, 55, 40);
   gold.position.set(-6, 4, 4);
   scene.add(gold);
   const cool = new THREE.PointLight(0x5b7fa6, 22, 50);
@@ -52,8 +52,8 @@ function initWebGL() {
 
   const dummy = new THREE.Object3D();
   const cols = new THREE.Color();
-  const baseCol = new THREE.Color(0x6b625a);
-  const accentCol = new THREE.Color(0xf59e0b);
+  const baseCol = new THREE.Color(0x6b6052);
+  const accentCol = new THREE.Color(0xc9a93c);
   const positions = [];
   let i = 0;
   for (let x = 0; x < GRID; x++) {
